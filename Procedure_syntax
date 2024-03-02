@@ -1,0 +1,37 @@
+Create a Procedure to add a record or row in
+a table
+
+
+
+CREATE TABLE Player ( 
+    ID int, 
+    LastName varchar(255), 
+    FirstName varchar(255), 
+    Runs int, 
+    State varchar(255) 
+)
+
+
+
+insert into players(id,lastname,firstname,runs,state) values (45,'Sharma','Rohit',10709)
+
+
+
+Create or Replace Procedure add_new(
+    a in Player.id%type,
+    b in Player.firstname%type,
+    c in Player.lastname%type,
+    d in Player.runs%type,
+    e in Player.state%type
+) 
+is
+Begin 
+    insert into Player values(a,b,c,d,e);
+end add_new;
+
+
+begin 
+ add_new(18,'virat','kohli',12000,'Delhi');
+end;
+
+select * from Player;
