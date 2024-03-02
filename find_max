@@ -1,0 +1,25 @@
+-- step 1
+create or replace function find_max(
+    a in number,
+    b in number
+)
+return number 
+is 
+    c  number;
+begin 
+    if a > b
+    then 
+    c := a; 
+    else 
+    c := b;
+	end if ;
+return c;
+end;
+
+-- step 2
+declare
+ans number;
+begin
+    ans:= find_max(333,22);
+dbms_output.put_line('the max is '|| ans);
+end;
