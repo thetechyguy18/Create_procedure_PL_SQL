@@ -1,0 +1,24 @@
+-- step 1
+Create a function to add two number in
+pl sql 
+
+Create or replace function add_numbers(
+    a in number,
+    b in number
+)
+return number
+is 
+    c number;
+Begin
+    c := a+b;
+ return c;
+end ;
+
+
+-- step 2 
+declare 
+    num number;
+Begin
+    num := add_numbers(11,22);
+dbms_output.put_line('the addtion of the number is '|| num);
+end;
